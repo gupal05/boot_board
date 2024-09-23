@@ -3,11 +3,19 @@ package com.zero.bord_boot.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.zero.bord_boot.dto.UserDto;
+import com.zero.bord_boot.services.auth.Autentication;
+
+import lombok.RequiredArgsConstructor;
 
 @Controller
+@RequiredArgsConstructor //lombok에서 제공하는 생성자 주입 어노테이션 @Autowride와 비슷한 느낌?
 public class HomeController {
+	private final Autentication auth;
+	
+	
 	 @GetMapping("/")
 	 public String index() {
 		 return "index";
@@ -24,8 +32,10 @@ public class HomeController {
 	 }
 	 
 	 @PostMapping("/join/result")
-	 public String joinResult(UserDto user) {
+	 public ModelAndView joinResult(UserDto user, ModelAndView mav) {
 		 System.out.println(user);
-		 return null;
+		 mav.addObject("user", user);
+		 this.auth.join(mav);
+		 return mav;
 	 }
 }
