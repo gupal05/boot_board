@@ -11,7 +11,7 @@
 	<groupId>com.zero</groupId>
 	<artifactId>bord_boot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>bord_boot</name>
+	<name>board_boot</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -30,6 +30,24 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
+		<!-- JSP 사용하기 위한 -->
+<!--		<dependency>-->
+<!--		    <groupId>org.apache.tomcat.embed</groupId>-->
+<!--		    <artifactId>tomcat-embed-jasper</artifactId>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--		    <groupId>javax.servlet</groupId>-->
+<!--		    <artifactId>jstl</artifactId>-->
+<!--		    <version>1.2</version>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--		    <groupId>javax.servlet</groupId>-->
+<!--		    <artifactId>javax.servlet-api</artifactId>-->
+<!--		    <version>4.0.1</version>  또는 필요한 버전 -->
+<!--		    <scope>provided</scope>-->
+<!--		</dependency>-->
+
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -57,6 +75,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<!-- jpa DTO -> Entity-->
+		<dependency>
+		    <groupId>org.modelmapper</groupId>
+		    <artifactId>modelmapper</artifactId>
+		    <version>3.1.0</version>
 		</dependency>
 	</dependencies>
 

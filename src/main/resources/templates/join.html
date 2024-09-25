@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -20,5 +20,17 @@
 		</div>
 		<button type="submit">회원가입</button>
 	</form>
+<div style="display: none">
+	<h1 id="messageHeader" th:text="${message}"></h1> <!-- ID를 추가 -->
+</div>
+<script>
+window.onload = function() {
+    // ID로 h1 태그의 텍스트를 가져오기
+    const message = document.getElementById('messageHeader').innerText; // 또는 innerHTML
+    if (message != '' && message != null) {
+        alert(message);
+    }
+};
+</script>
 </body>
 </html>
