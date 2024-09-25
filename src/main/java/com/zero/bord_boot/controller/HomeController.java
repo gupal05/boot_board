@@ -36,6 +36,7 @@ public class HomeController {
 		 System.out.println(user);
 		 mav.addObject("user", user);
 		 this.auth.join(mav);
+		 System.out.println(mav.getModel().get("message"));
 		 return mav;
 	 }
 }
